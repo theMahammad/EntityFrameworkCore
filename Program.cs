@@ -8,17 +8,20 @@ namespace EntityFrameworkCore
     {
         public static readonly ILoggerFactory MyLoggerFactory
     = LoggerFactory.Create(builder => { builder.AddConsole(); });
-        static void Main(string[] args)
-        {
-            
-           using(ShopContext db = new ShopContext()){
-               var product = new Product{Name = "Vestel Full HD",Price = 2000,CategoryId = db.Categories.Where(cat=>cat.Name=="TV").First().Id};
-               db.Products.Add(product);
-               db.SaveChanges();
-               Console.WriteLine("Data's been added");
+    static void ShowFirstProductOnConsole(){
+ using(ShopContext db = new ShopContext()){
+               var product = db.Products.FirstOrDefault();
+               
+               Console.WriteLine($"{product.Name}| {product.Price} | {db.Categories.Where(cat => cat.Id==product.CategoryId).FirstOrDefault().Name}");
                
            }
             
+    }
+    
+        static void Main(string[] args)
+        {
+            ShowFirstProductOnConsole();
+          
 
     }
 }
