@@ -50,3 +50,6 @@ C:\GithubProjects\EntityFrameworkCore\obj\Debug\netcoreapp3.1\EntityFrameworkCor
 C:\GithubProjects\EntityFrameworkCore\obj\Debug\netcoreapp3.1\EntityFrameworkCore.pdb
 C:\GithubProjects\EntityFrameworkCore\obj\Debug\netcoreapp3.1\EntityFrameworkCore.genruntimeconfig.cache
 C:\GithubProjects\EntityFrameworkCore\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\GithubProjects\EntityFrameworkCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Configuration.dll
+C:\GithubProjects\EntityFrameworkCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Console.dll
+C:\GithubProjects\EntityFrameworkCore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll

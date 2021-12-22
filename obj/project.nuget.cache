@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "B/HS62mU4NZ7ybU8mlwHbUFlajg5unnL4oFaIy4+LWS4hYjK+9HstxgkSsyT7Yo0eSBo9dvmpda6KBAcVWQznA==",
+  "dgSpecHash": "GXT7JZ0jW06cM8fH1IxCxFUaLRfqCVw2C9/R6M1YxRCd7WeN7wVAd1rrqdBTcC6jfoVK+xbcTNK6q1IIE2EyKw==",
   "success": true,
   "projectFilePath": "C:\\GithubProjects\\EntityFrameworkCore\\EntityFrameworkCore.csproj",
   "expectedPackageFiles": [
@@ -26,7 +26,10 @@
     "C:\\Users\\hssjx\\.nuget\\packages\\microsoft.extensions.dependencymodel\\3.1.0\\microsoft.extensions.dependencymodel.3.1.0.nupkg.sha512",
     "C:\\Users\\hssjx\\.nuget\\packages\\microsoft.extensions.logging\\3.1.0\\microsoft.extensions.logging.3.1.0.nupkg.sha512",
     "C:\\Users\\hssjx\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.0\\microsoft.extensions.logging.abstractions.3.1.0.nupkg.sha512",
+    "C:\\Users\\hssjx\\.nuget\\packages\\microsoft.extensions.logging.configuration\\3.1.0\\microsoft.extensions.logging.configuration.3.1.0.nupkg.sha512",
+    "C:\\Users\\hssjx\\.nuget\\packages\\microsoft.extensions.logging.console\\3.1.0\\microsoft.extensions.logging.console.3.1.0.nupkg.sha512",
     "C:\\Users\\hssjx\\.nuget\\packages\\microsoft.extensions.options\\3.1.0\\microsoft.extensions.options.3.1.0.nupkg.sha512",
+    "C:\\Users\\hssjx\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\3.1.0\\microsoft.extensions.options.configurationextensions.3.1.0.nupkg.sha512",
     "C:\\Users\\hssjx\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.0\\microsoft.extensions.primitives.3.1.0.nupkg.sha512",
     "C:\\Users\\hssjx\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.2\\sqlitepclraw.bundle_e_sqlite3.2.0.2.nupkg.sha512",
     "C:\\Users\\hssjx\\.nuget\\packages\\sqlitepclraw.core\\2.0.2\\sqlitepclraw.core.2.0.2.nupkg.sha512",
