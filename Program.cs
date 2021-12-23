@@ -16,7 +16,7 @@ namespace EntityFrameworkCore
     static void ShowFirstProductOnConsole(){
  using(ShopContext db = new ShopContext()){
                var product = db.Products.FirstOrDefault();
-               
+               Console.WriteLine(WrittenProductsInDetail(product,db));
                  
            }
             
@@ -30,12 +30,21 @@ Console.WriteLine(WrittenProductsInDetail(product,db));
           
         }
     }
+    static void GetProductById(int id){
+        using(var db = new ShopContext() ){
+            var selectedProduct = db.Products.Where(product => product.Id==id).FirstOrDefault(); // Thanks to FirstOrDefault, program don't throw a exception like First() method if a data had not found
+            
+            Console.WriteLine(WrittenProductsInDetail(selectedProduct,db));
+        }
+        
+    }
 
     
         static void Main(string[] args)
         {
 
           ShowAllProducts();
+          GetProductById(1);
 
     }
 }
