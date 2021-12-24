@@ -11,8 +11,15 @@ namespace EntityFrameworkCore
         public static readonly ILoggerFactory MyLoggerFactory
     = LoggerFactory.Create(builder => { builder.AddConsole(); });
     static string WrittenProductsInDetail(Product product,ShopContext db){
-         return $"{product.Name}| {product.Price} | {db.Categories.Where(cat => cat.Id==product.CategoryId).FirstOrDefault().Name}";
+         return $"Id : {product.Id}| Name : {product.Name}| Price :  {product.Price} | Category : {db.Categories.Where(cat => cat.Id==product.CategoryId).FirstOrDefault().Name}";
             
+    }
+    
+        static void PrintUpdatingNotification(){
+        Console.WriteLine("Data's been updated");
+    }
+    static void PrintDeleteNotification(){
+        Console.WriteLine("Data's been deleted");
     }
     static void ShowFirstProductOnConsole(){
  using(ShopContext db = new ShopContext()){
@@ -46,12 +53,7 @@ Console.WriteLine(WrittenProductsInDetail(product,db));
         }
         
     }
-    static void PrintUpdatingNotification(){
-        Console.WriteLine("Data's been updated");
-    }
-    static void PrintDeleteNotification(){
-        Console.WriteLine("Data's been deleted");
-    }
+
     static void UpdateProduct(Product product){
         //Change tracking
         using(var db = new ShopContext()){
@@ -111,14 +113,41 @@ Console.WriteLine(WrittenProductsInDetail(product,db));
             }
         }
     }
+    static void DeleteProductWay2(int id){
 
+        using(var db = new ShopContext()){
+            var product = db.Products.Where(product_ => product_.Id== id).FirstOrDefault();
+            if(product!=null){
+                db.Products.Remove(product);
+                db.SaveChanges();
+                PrintDeleteNotification();
+                
+            }
+        }
+    }
+    static void DeleteProductWay3(int id){
+        using (var db = new ShopContext()){
+            var product = new Product{Id = id};//This means that we can delete a data without selecting operation
+            db.Products.Remove(product); 
+            db.SaveChanges();
+            PrintDeleteNotification();
+            
+        }
+    }
 
+    static void DeleteProductWay4(int id){
+        using (var db = new ShopContext()){
+            var product = new Product{Id = id};
+            db.Entry(product).State=EntityState.Deleted; 
+            db.SaveChanges();
+            PrintDeleteNotification();
+        }
+    }
     
         static void Main(string[] args)
         {
-
+                
           ShowAllProducts();
-         UpdateProductWay3(1);
           
           
 

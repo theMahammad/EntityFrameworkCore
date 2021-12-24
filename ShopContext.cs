@@ -8,8 +8,10 @@ namespace EntityFrameworkCore
 
         protected override void  OnConfiguring(DbContextOptionsBuilder optionsBuilder){
             
-            optionsBuilder.UseLoggerFactory(Program.MyLoggerFactory)
-            .UseSqlite("Data Source=shop.db");
+           
+           optionsBuilder.
+           UseLoggerFactory(Program.MyLoggerFactory)
+           .UseSqlite("Data Source=shop.db");
         }
     
 
