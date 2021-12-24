@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 
 namespace EntityFrameworkCore
 {
@@ -48,7 +49,11 @@ Console.WriteLine(WrittenProductsInDetail(product,db));
     static void UpdateProduct(Product product){
         //Change tracking
         using(var db = new ShopContext()){
+            //db.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking; // With write this command, we can prevent change tracking
             var calledProduct = db.Products.Where(p => p.Id==product.Id).FirstOrDefault();
+           
+            
+            
             if (!(calledProduct is null)){
                     calledProduct.Name = product.Name;
                     calledProduct.Price = product.Price;
@@ -72,7 +77,7 @@ Console.WriteLine(WrittenProductsInDetail(product,db));
 
           ShowAllProducts();
          var product =GetProductById(1);
-         product.Name="Vestel Smart TV"; //Data's been updated
+         product.Name="Vestel Smartech TV"; //Data's been updated
          UpdateProduct(product);
                    
           
