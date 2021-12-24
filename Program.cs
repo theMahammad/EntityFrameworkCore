@@ -49,6 +49,9 @@ Console.WriteLine(WrittenProductsInDetail(product,db));
     static void PrintUpdatingNotification(){
         Console.WriteLine("Data's been updated");
     }
+    static void PrintDeleteNotification(){
+        Console.WriteLine("Data's been deleted");
+    }
     static void UpdateProduct(Product product){
         //Change tracking
         using(var db = new ShopContext()){
@@ -96,6 +99,17 @@ Console.WriteLine(WrittenProductsInDetail(product,db));
         }
         }
         
+    }
+    static void DeleteProduct(int id){
+        using(var db = new ShopContext()){
+            var product = GetProductById(id);
+            if(product!=null){
+                db.Products.Remove(product);
+                //db.Remove(product); we can also use this method instead of the above method
+                db.SaveChanges();
+
+            }
+        }
     }
 
 
