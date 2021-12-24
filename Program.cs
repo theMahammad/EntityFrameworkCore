@@ -46,6 +46,9 @@ Console.WriteLine(WrittenProductsInDetail(product,db));
         }
         
     }
+    static void PrintUpdatingNotification(){
+        Console.WriteLine("Data's been updated");
+    }
     static void UpdateProduct(Product product){
         //Change tracking
         using(var db = new ShopContext()){
@@ -61,7 +64,7 @@ Console.WriteLine(WrittenProductsInDetail(product,db));
                     
                     
                     db.SaveChanges();
-                    Console.WriteLine("Data's been updated");
+                   PrintUpdatingNotification();
                   
             } 
         }
@@ -76,8 +79,23 @@ Console.WriteLine(WrittenProductsInDetail(product,db));
                 product.Name = "Samsung Smart TV";
                 
                 db.SaveChanges();
-                Console.WriteLine("Data's been updated");
+                PrintUpdatingNotification();
             }
+    }
+
+    static void UpdateProductWay3(int id){
+        using(var db = new ShopContext()){
+    var product = GetProductById(id);
+        
+        if(product!=null){
+            product.Price=5000;
+            db.Products.Update(product);
+            db.SaveChanges();
+            PrintUpdatingNotification();
+            
+        }
+        }
+        
     }
 
 
@@ -86,7 +104,7 @@ Console.WriteLine(WrittenProductsInDetail(product,db));
         {
 
           ShowAllProducts();
-         UpdateProductWay2(1);
+         UpdateProductWay3(1);
           
           
 
