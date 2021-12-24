@@ -69,6 +69,16 @@ Console.WriteLine(WrittenProductsInDetail(product,db));
 
 
     }
+    static void UpdateProductWay2(int id){
+            using(var db = new ShopContext()){
+                var product = new Product{  Id = id };
+                db.Products.Attach(product); //Thanks to the Attach method,we can enable system to track it
+                product.Name = "Samsung Smart TV";
+                
+                db.SaveChanges();
+                Console.WriteLine("Data's been updated");
+            }
+    }
 
 
     
@@ -76,10 +86,7 @@ Console.WriteLine(WrittenProductsInDetail(product,db));
         {
 
           ShowAllProducts();
-         var product =GetProductById(1);
-         product.Name="Vestel Smartech TV"; //Data's been updated
-         UpdateProduct(product);
-                   
+         UpdateProductWay2(1);
           
           
 
