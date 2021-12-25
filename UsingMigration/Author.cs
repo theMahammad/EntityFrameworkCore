@@ -18,5 +18,7 @@ namespace UsingMigration
         [Required]
         public byte Age { get;set;}
         public ICollection<Article> Articles { get; set; }
+        [Column(TypeName ="tinyint")]
+        public int WorkExperience { get; set; } 
     }
 }

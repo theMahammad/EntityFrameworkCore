@@ -10,12 +10,15 @@ namespace UsingMigration
             Console.WriteLine("Data has been added!");
             
                     }
+        static void PrintUpdatingNotification(){
+            Console.WriteLine("Data has been updated!");
+        }                    
         public  static void AddAuthor(Author author){
                 using(var db = new Context() ){
                     db.Authors.Add(author);
                     db.SaveChanges();
                     PrintAddingNotification();
-
+                    
                 }
         }
         public static Author GetAuthorById(int id){
@@ -39,9 +42,20 @@ namespace UsingMigration
                 
         }
         }
+        public static void UpdateAuthor(Author author){
+            using(var db = new Context()){
+                db.Authors.Attach(author);
+               
+                author.WorkExperience = 3;
+                db.SaveChanges();
+                PrintUpdatingNotification();
+            }
+        }   
+        
         static void Main(string[] args)
         {
-            PrintSelectedAuthor(GetAuthorById(1));
+            
+            
                 
                 
 
