@@ -1,0 +1,14 @@
+C:\GithubProjects\EntityFrameworkCore\relationships\obj\Debug\netcoreapp3.1\relationships.csproj.AssemblyReference.cache
+C:\GithubProjects\EntityFrameworkCore\relationships\obj\Debug\netcoreapp3.1\relationships.GeneratedMSBuildEditorConfig.editorconfig
+C:\GithubProjects\EntityFrameworkCore\relationships\obj\Debug\netcoreapp3.1\relationships.AssemblyInfoInputs.cache
+C:\GithubProjects\EntityFrameworkCore\relationships\obj\Debug\netcoreapp3.1\relationships.AssemblyInfo.cs
+C:\GithubProjects\EntityFrameworkCore\relationships\obj\Debug\netcoreapp3.1\relationships.csproj.CoreCompileInputs.cache
+C:\GithubProjects\EntityFrameworkCore\relationships\bin\Debug\netcoreapp3.1\relationships.exe
+C:\GithubProjects\EntityFrameworkCore\relationships\bin\Debug\netcoreapp3.1\relationships.deps.json
+C:\GithubProjects\EntityFrameworkCore\relationships\bin\Debug\netcoreapp3.1\relationships.runtimeconfig.json
+C:\GithubProjects\EntityFrameworkCore\relationships\bin\Debug\netcoreapp3.1\relationships.runtimeconfig.dev.json
+C:\GithubProjects\EntityFrameworkCore\relationships\bin\Debug\netcoreapp3.1\relationships.dll
+C:\GithubProjects\EntityFrameworkCore\relationships\bin\Debug\netcoreapp3.1\relationships.pdb
+C:\GithubProjects\EntityFrameworkCore\relationships\obj\Debug\netcoreapp3.1\relationships.dll
+C:\GithubProjects\EntityFrameworkCore\relationships\obj\Debug\netcoreapp3.1\relationships.pdb
+C:\GithubProjects\EntityFrameworkCore\relationships\obj\Debug\netcoreapp3.1\relationships.genruntimeconfig.cache
