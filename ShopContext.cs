@@ -11,8 +11,10 @@ namespace EntityFrameworkCore
            
            optionsBuilder.
            UseLoggerFactory(Program.MyLoggerFactory)
-           .UseSqlite("Data Source=shop.db");
-        }
+          // .UseSqlite("Data Source=shop.db");
+          .UseSqlServer(@"Data Source =(localdb)\MSSQLLocalDB;Database=ShopDb;Integrated Security=SSPI "); //Since this project is code first, database will be created in the server 
+      
+           }
     
 
     }
