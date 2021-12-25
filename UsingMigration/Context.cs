@@ -6,8 +6,9 @@ namespace UsingMigration
 {
     public class Context:DbContext
     {
-        public DbSet<Author> Authors { get ; set;}
+        public DbSet<Author> Authors { get ; set; }
         public DbSet<Article> Articles { get; set; }
+        public DbSet<Tag> Tags { get; set; }
         
         protected override void  OnConfiguring(DbContextOptionsBuilder optionsBuilder){
             

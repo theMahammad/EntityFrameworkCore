@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "M6BAkhcAcoF6KqpdCDn1vBCfyQt13E9W4RmDd4v3pFdY51KLLy2HNDEC2E1H8Ztsne9zPWnJCZjAZUWJeS3jXQ==",
+  "dgSpecHash": "oIZeq3WNlb5pg+7vP20WLgoFbV/gXK6OWC+5kiuOFyKNSgCWQzLYj6Q8ROOY+wgFRxu210cBZJ3+znDJY0hBFA==",
   "success": true,
-  "projectFilePath": "C:\\GithubProjects\\EntityFrameworkCore\\UsingMigration\\UsingMigration.csproj",
+  "projectFilePath": "C:\\GithubProjects\\EntityFrameworkCore\\usingMigration\\UsingMigration.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hssjx\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\hssjx\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
