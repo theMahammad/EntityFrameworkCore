@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GithubProjects\\EntityFrameworkCore\\usingMigration\\UsingMigration.csproj": {}
+    "C:\\GithubProjects\\EntityFrameworkCore\\UsingMigration\\UsingMigration.csproj": {}
   },
   "projects": {
-    "C:\\GithubProjects\\EntityFrameworkCore\\usingMigration\\UsingMigration.csproj": {
+    "C:\\GithubProjects\\EntityFrameworkCore\\UsingMigration\\UsingMigration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GithubProjects\\EntityFrameworkCore\\usingMigration\\UsingMigration.csproj",
+        "projectUniqueName": "C:\\GithubProjects\\EntityFrameworkCore\\UsingMigration\\UsingMigration.csproj",
         "projectName": "UsingMigration",
-        "projectPath": "C:\\GithubProjects\\EntityFrameworkCore\\usingMigration\\UsingMigration.csproj",
+        "projectPath": "C:\\GithubProjects\\EntityFrameworkCore\\UsingMigration\\UsingMigration.csproj",
         "packagesPath": "C:\\Users\\hssjx\\.nuget\\packages\\",
-        "outputPath": "C:\\GithubProjects\\EntityFrameworkCore\\usingMigration\\obj\\",
+        "outputPath": "C:\\GithubProjects\\EntityFrameworkCore\\UsingMigration\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

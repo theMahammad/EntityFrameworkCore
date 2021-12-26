@@ -149,9 +149,8 @@ Console.WriteLine(WrittenProductsInDetail(product,db));
         {
 
                ShowAllProducts();
-               System.Console.WriteLine("Good!");
                
-      
+                
           
           
 

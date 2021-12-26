@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/UsingMigration/bin/Debug/netcoreapp3.1/UsingMigration.dll",
+            "program": "${workspaceFolder}/Relationships/bin/Debug/netcoreapp3.1/relationships.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/UsingMigration",
+            "cwd": "${workspaceFolder}/Relationships",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
