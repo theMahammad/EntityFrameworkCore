@@ -17,7 +17,9 @@ namespace Relationships
         public string Username { get; set; }
 
         [MaxLength(100)]
-        public string Email { get; set;}
+        
+        public string Email { get; set; }
+        public Customer Customer { get; set; } // This code provide us with one-to-one relationship between User and Customer
         public List<Adress> Adresses { get; set; }
     }
 }

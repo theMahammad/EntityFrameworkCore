@@ -8,8 +8,8 @@ using Relationships;
 namespace relationships.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20211226052428_CreatingForgottenTables")]
-    partial class CreatingForgottenTables
+    [Migration("20211227051625_OneToOneRelationship")]
+    partial class OneToOneRelationship
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -36,6 +36,35 @@ namespace relationships.Migrations
                     b.ToTable("Adresses");
                 });
 
+            modelBuilder.Entity("Relationships.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IdentityNumber")
+                        .IsRequired()
+                        .HasColumnType("varchar(15)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("Customers");
+                });
+
             modelBuilder.Entity("Relationships.User", b =>
                 {
                     b.Property<int>("Id")
@@ -59,6 +88,15 @@ namespace relationships.Migrations
                     b.HasOne("Relationships.User", "User")
                         .WithMany("Adresses")
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Relationships.Customer", b =>
+                {
+                    b.HasOne("Relationships.User", "User")
+                        .WithOne("Customer")
+                        .HasForeignKey("Relationships.Customer", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

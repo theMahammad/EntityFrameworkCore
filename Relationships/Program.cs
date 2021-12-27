@@ -9,7 +9,7 @@ namespace relationships
         static void PrintAddingNotification(){
             Console.WriteLine("Data has been added!");
         }
-            static void AddUsers(User user){
+            static void AddUser(User user){
 
                    using(var db = new Context()){
                       db.Users.Add(user);
@@ -62,13 +62,20 @@ namespace relationships
             }
         }
     }
+    static void AddUserViaAdressTable(){
+    var user = new User{Username = "Naghi2021",Email = "eua@mail.ru" };
+            var adress = new Adress{FullAdress = "Block 1",User=user}; // Thanks to User=user, we can add a new user to system indirectly
+            AddAdress(adress);
+    }
+
 
         static void Main(string[] args)
         {
-           var user = new User{Username = "Naghi2021",Email = "eua@mail.ru" };
-           var adress = new Adress{FullAdress = "Block 1",User=user}; // Thanks to User=user, we can add a new user to system indirectly
-           AddAdress(adress);
             
+            var customer = new Customer{FirstName = "Elovset", LastName = "Isgenderov",IdentityNumber = "123EACR"};
+            var user = new User{Username = "elovset123", Email = "elovset@yahoo.com" , Customer = customer};
+            AddUser(user);
+
         }   
     }
 }
