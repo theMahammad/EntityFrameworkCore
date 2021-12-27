@@ -68,11 +68,8 @@ namespace relationships
             var adress = new Adress{FullAdress = "Block 1",User=user}; // Thanks to User=user, we can add a new user to system indirectly
             AddAdress(adress);
     }
-
-
-        static void Main(string[] args)
-        {
-            using(var db = new Context()){
+    static void ManyToManyAddingExample(){
+         using(var db = new Context()){
 
                 var product = new Product{Name="Television",Price=300};
                 var categories = new List<Category>{new Category{Name="TV"},new Category{Name = "Technological Device"}};
@@ -83,10 +80,32 @@ namespace relationships
                 db.Products.Add(product);
                 db.SaveChanges();
                 PrintAddingNotification();
-            }
+                
+    }
+    }
+
+
+        static void Main(string[] args)
+        {
+             using (var db = new Context()){
+
+               var selectedProduct = db.Products.Where(p=>p.Id==1).FirstOrDefault();
+               if(selectedProduct!=null){
+                   selectedProduct.ProductCategories = db.ProductCategories.Where(PC=>PC.ProductId==selectedProduct.Id).ToList();
+                   foreach(var pc in selectedProduct.ProductCategories){
+                       Console.WriteLine($@"{db.Categories.Where(c=> c.Id==pc.CategoryId).FirstOrDefault().Name}");
+                   }
+               }
+           }
+          
+
+
+
+
+        }
             
             
 
         }   
     }
-}
+

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GithubProjects\\EntityFrameworkCore\\Relationships\\relationships.csproj": {}
+    "C:\\GithubProjects\\EntityFrameworkCore\\relationships\\relationships.csproj": {}
   },
   "projects": {
-    "C:\\GithubProjects\\EntityFrameworkCore\\Relationships\\relationships.csproj": {
+    "C:\\GithubProjects\\EntityFrameworkCore\\relationships\\relationships.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GithubProjects\\EntityFrameworkCore\\Relationships\\relationships.csproj",
+        "projectUniqueName": "C:\\GithubProjects\\EntityFrameworkCore\\relationships\\relationships.csproj",
         "projectName": "relationships",
-        "projectPath": "C:\\GithubProjects\\EntityFrameworkCore\\Relationships\\relationships.csproj",
+        "projectPath": "C:\\GithubProjects\\EntityFrameworkCore\\relationships\\relationships.csproj",
         "packagesPath": "C:\\Users\\hssjx\\.nuget\\packages\\",
-        "outputPath": "C:\\GithubProjects\\EntityFrameworkCore\\Relationships\\obj\\",
+        "outputPath": "C:\\GithubProjects\\EntityFrameworkCore\\relationships\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

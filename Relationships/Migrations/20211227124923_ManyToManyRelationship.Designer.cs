@@ -8,7 +8,7 @@ using Relationships;
 namespace relationships.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20211227064501_ManyToManyRelationship")]
+    [Migration("20211227124923_ManyToManyRelationship")]
     partial class ManyToManyRelationship
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -108,7 +108,7 @@ namespace relationships.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("ProductCategory");
+                    b.ToTable("ProductCategories");
                 });
 
             modelBuilder.Entity("Relationships.User", b =>

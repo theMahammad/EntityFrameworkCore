@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fHdYIGvi4EUGAAMo6EvPiCzOzv90jkOZaeklSzj8erVcPqXgwLuOp/6Gd5tiGrM06s09YMKiElp+VO7bappIqA==",
+  "dgSpecHash": "0AMTIOKlYhCgIb7k80dDpemmYN5h3ANmwQcG2uEomvkpxvseHPx8+fFA1KBtvRlIxQNmz58jnkMT2wlEOvRgRQ==",
   "success": true,
-  "projectFilePath": "C:\\GithubProjects\\EntityFrameworkCore\\Relationships\\relationships.csproj",
+  "projectFilePath": "C:\\GithubProjects\\EntityFrameworkCore\\relationships\\relationships.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hssjx\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\hssjx\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

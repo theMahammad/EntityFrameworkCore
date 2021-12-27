@@ -106,7 +106,7 @@ namespace relationships.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("ProductCategory");
+                    b.ToTable("ProductCategories");
                 });
 
             modelBuilder.Entity("Relationships.User", b =>

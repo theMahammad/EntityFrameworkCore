@@ -48,7 +48,7 @@ namespace relationships.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductCategory",
+                name: "ProductCategories",
                 columns: table => new
                 {
                     ProductId = table.Column<int>(nullable: false),
@@ -56,15 +56,15 @@ namespace relationships.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductCategory", x => new { x.ProductId, x.CategoryId });
+                    table.PrimaryKey("PK_ProductCategories", x => new { x.ProductId, x.CategoryId });
                     table.ForeignKey(
-                        name: "FK_ProductCategory_Categories_CategoryId",
+                        name: "FK_ProductCategories_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ProductCategory_Products_ProductId",
+                        name: "FK_ProductCategories_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
@@ -125,8 +125,8 @@ namespace relationships.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductCategory_CategoryId",
-                table: "ProductCategory",
+                name: "IX_ProductCategories_CategoryId",
+                table: "ProductCategories",
                 column: "CategoryId");
         }
 
@@ -139,7 +139,7 @@ namespace relationships.Migrations
                 name: "Customers");
 
             migrationBuilder.DropTable(
-                name: "ProductCategory");
+                name: "ProductCategories");
 
             migrationBuilder.DropTable(
                 name: "Users");
