@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = DataAnnotations_FluentAPI
+build_property.ProjectDir = c:\GithubProjects\EntityFrameworkCore\DataAnnotations_FluentAPI\
