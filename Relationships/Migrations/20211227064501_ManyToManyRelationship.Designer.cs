@@ -8,8 +8,8 @@ using Relationships;
 namespace relationships.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20211227051625_OneToOneRelationship")]
-    partial class OneToOneRelationship
+    [Migration("20211227064501_ManyToManyRelationship")]
+    partial class ManyToManyRelationship
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,6 +34,20 @@ namespace relationships.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Adresses");
+                });
+
+            modelBuilder.Entity("Relationships.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Relationships.Customer", b =>
@@ -63,6 +77,38 @@ namespace relationships.Migrations
                         .IsUnique();
 
                     b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("Relationships.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Relationships.ProductCategory", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ProductId", "CategoryId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("ProductCategory");
                 });
 
             modelBuilder.Entity("Relationships.User", b =>
@@ -97,6 +143,21 @@ namespace relationships.Migrations
                     b.HasOne("Relationships.User", "User")
                         .WithOne("Customer")
                         .HasForeignKey("Relationships.Customer", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Relationships.ProductCategory", b =>
+                {
+                    b.HasOne("Relationships.Category", "Category")
+                        .WithMany("ProductCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Relationships.Product", "Product")
+                        .WithMany("ProductCategories")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

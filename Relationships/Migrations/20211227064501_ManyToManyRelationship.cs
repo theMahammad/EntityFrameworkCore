@@ -2,10 +2,37 @@
 
 namespace relationships.Migrations
 {
-    public partial class OneToOneRelationship : Migration
+    public partial class ManyToManyRelationship : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Categories",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Categories", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(nullable: true),
+                    Price = table.Column<decimal>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
@@ -18,6 +45,30 @@ namespace relationships.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProductCategory",
+                columns: table => new
+                {
+                    ProductId = table.Column<int>(nullable: false),
+                    CategoryId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductCategory", x => new { x.ProductId, x.CategoryId });
+                    table.ForeignKey(
+                        name: "FK_ProductCategory_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_ProductCategory_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -72,6 +123,11 @@ namespace relationships.Migrations
                 table: "Customers",
                 column: "UserId",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductCategory_CategoryId",
+                table: "ProductCategory",
+                column: "CategoryId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -83,7 +139,16 @@ namespace relationships.Migrations
                 name: "Customers");
 
             migrationBuilder.DropTable(
+                name: "ProductCategory");
+
+            migrationBuilder.DropTable(
                 name: "Users");
+
+            migrationBuilder.DropTable(
+                name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Products");
         }
     }
 }

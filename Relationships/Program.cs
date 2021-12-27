@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Relationships;
 
@@ -71,10 +72,20 @@ namespace relationships
 
         static void Main(string[] args)
         {
+            using(var db = new Context()){
+
+                var product = new Product{Name="Television",Price=300};
+                var categories = new List<Category>{new Category{Name="TV"},new Category{Name = "Technological Device"}};
+                
+                foreach(var category in categories){
+                    product.ProductCategories.Add(new ProductCategory{Category=category});
+                }
+                db.Products.Add(product);
+                db.SaveChanges();
+                PrintAddingNotification();
+            }
             
-            var customer = new Customer{FirstName = "Elovset", LastName = "Isgenderov",IdentityNumber = "123EACR"};
-            var user = new User{Username = "elovset123", Email = "elovset@yahoo.com" , Customer = customer};
-            AddUser(user);
+            
 
         }   
     }
