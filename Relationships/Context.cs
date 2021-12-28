@@ -15,7 +15,7 @@ namespace Relationships
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
 
-            optionsBuilder.UseSqlite("Data Source = Db.db");
+            optionsBuilder.UseSqlite("Data Source=Db.db");
         }
         //Fluent API
         protected override void OnModelCreating(ModelBuilder modelBuilder)
