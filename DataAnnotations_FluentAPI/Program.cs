@@ -7,7 +7,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataAnnotations_FluentAPI
 {
-
+    //(1) Setting a column as not null
+    //(2) Setting Primary key
+    //(3) Including a type(class) to model
+    //(4) Excluding a type(class) from model
+    //(5) Customizing the name of tables
     public class MyDBContext:DbContext
     {   //There are some ways to include types(classes) in the model. (3)
         public DbSet<Blog> Blogs { get; set; } // First one is declaring a property with DBSet<ClassName> type (3)  
@@ -25,7 +29,8 @@ namespace DataAnnotations_FluentAPI
                 
                 modelBuilder.Ignore<Study>(); // We have mentioned that if a class  is used with DbSet<> to declare a property,EF include it into Model.
                 //But we have also mentioned that EF always prefer Fluent API. So, if we call Ignore method, EF exclude the class we specify (4)
-                        
+
+                modelBuilder.Entity<Blog>().ToTable("blogger"); //We can also use this way for naming tables                        
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
 
@@ -33,12 +38,15 @@ namespace DataAnnotations_FluentAPI
         }
         
         
+        
     }
+    
+ 
     
     public class Study{
         public int Id { get; set; }
     }
-
+    [Table("Blogg")] //If we want to customize the name of a table, we can use this (5)
     public class Blog{
 
         public int Id { get; set;}
@@ -68,7 +76,7 @@ namespace DataAnnotations_FluentAPI
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            
+         
         }
     }
 }
